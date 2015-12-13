@@ -14,19 +14,18 @@ syntax region  sqgString      start=+"+ skip=+\\\\\|\\"+ end=+"+
 syntax match   sqgInteger     "\<\d+\=\>"
 syntax match   sqgFloat       "\<\d[[:digit:]_]*[eE][\-+]\=\d\+"
 
-syntax keyword sqgStatement   def nextgroup=sqgFunction skipwhite
-syntax keyword sqgStatement   let nextgroup=sqgVariable skipwhite
-syntax keyword sqgStatement   then end
 syntax keyword sqgKeyword     error
-syntax keyword sqgLabel       match
-syntax keyword sqgConditional if elseif else case
+syntax keyword sqgLabel       match end
+syntax keyword sqgConditional if then elseif else case end
 syntax keyword sqgRepeat      forEach
 syntax keyword sqgType        Number String Object Date
 syntax keyword sqgRequire     require
 syntax match   sqgIdentifier  /\<[\W_]+\>/
-syntax region  sqgFunction    start="\<def\>" matchgroup=sqgDef end="\%(\<def\_s\+\)\@<!\<end\>"
-syntax match   sqgDef         "[^[:space:];#(]\+"   contained contains=sqgIdentifier
-syntax match   sqgVariable    "\(\w\)" contained
+
+syntax keyword sqgFunction    def end
+syntax keyword sqgFunction    ()
+
+syntax keyword sqgVariable    let {}
 
 syntax match   sqgOperator    "\<%(\~|=|==|\.|\.\.|\.\.\.|++|<|<=|>=|>|-|+|*)\>"
 
@@ -45,6 +44,6 @@ highlight default link sqgType        Type
 highlight default link sqgOperator    Operator
 highlight default link sqgRequire     Include
 highlight default link sqgFunction    Function
-highlight default link sqgFunction    Identifier
+highlight default link sqgVariable    Identifier
 
 let b:current_syntax = 'squiggle'
