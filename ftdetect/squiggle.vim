@@ -1,9 +1,9 @@
-au BufNewFile,BufRead *.sqg setf squiggle
+autocmd BufNewFile,BufRead *.sqg setfiletype squiggle
 
-fun! s:SelectSquiggle()
+function! s:SelectSquiggle()
   if getline(1) =~# '^#!.*/bin/env\s\+squiggle\>'
-    set ft=squiggle
+    set filetype=squiggle
   endif
-endfun
+endfunction
 
-au BufNewFile,BufRead * call s:SelectSquiggle()
+autocmd BufNewFile,BufRead * call s:SelectSquiggle()
