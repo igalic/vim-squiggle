@@ -43,7 +43,7 @@ highlight default link sqgConditional Conditional
 highlight default link sqgRepeat      Repeat
 highlight default link sqgType        Type
 highlight default link sqgOperator    Operator
-highlight default link sqgOperator    Include
+highlight default link sqgRequire     Include
 highlight default link sqgFunction    Function
 highlight default link sqgFunction    Identifier
 
