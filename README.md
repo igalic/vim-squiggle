@@ -7,6 +7,17 @@ compile-to-JS programming language
 This plugin provides support for syntax hilighting, indent, linter integration
 support, etc…
 
+Install
+=======
+
+The easiest way to install this plugin is to use something like
+[Vundle](https://github.com/VundleVim/Vundle.vim). Then all you have to do is
+extend your .vimrc for another Plugin line:
+
+```vim
+Plugin 'squiggle-lang/vim-squiggle'
+```
+
 TODO
 ====
 
